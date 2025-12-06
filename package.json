@@ -1,0 +1,61 @@
+{
+	"activationEvents": [],
+	"categories": [
+		"Other"
+	],
+	"contributes": {
+		"commands": [
+			{
+				"command": "keymap-cleaner.run",
+				"title": "Clean Keybindings"
+			}
+		],
+		"menus": {
+			"editor/context": [
+				{
+					"command": "keymap-cleaner.run",
+					"group": "1_modification",
+					"when": "resourceFilename == keybindings.json"
+				}
+			]
+		}
+	},
+	"description": "Automatically detect and remove unused keybindings from your VS Code configuration to keep it clean and optimized",
+	"devDependencies": {
+		"@types/mocha": "10.0.10",
+		"@types/node": "22.x",
+		"@types/vscode": "1.106.1",
+		"eslint": "9.39.1",
+		"typescript": "5.9.3",
+		"typescript-eslint": "8.48.1"
+	},
+	"displayName": "Keymap Cleaner",
+	"engines": {
+		"vscode": "^1.106.1"
+	},
+	"homepage": "https://ovfteam.com/vsc-ext/keymap-cleaner",
+	"icon": "icon.png",
+	"keywords": [
+		"keybindings",
+		"keymap",
+		"cleanup",
+		"unused",
+		"vscode",
+		"productivity",
+		"settings"
+	],
+	"main": "./out/extension.js",
+	"name": "keymap-cleaner",
+	"publisher": "ovfteam",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ovfteam/keymap-cleaner"
+	},
+	"scripts": {
+		"compile": "tsc -p ./",
+		"lint": "eslint src",
+		"vscode:prepublish": "pnpm run compile",
+		"watch": "tsc -watch -p ./"
+	},
+	"version": "0.0.1"
+}
