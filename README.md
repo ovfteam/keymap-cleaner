@@ -1,17 +1,22 @@
 # Keymap Cleaner
 
-Remove unused keybindings in VS Code to keep your configuration clean and optimized.
+<p align="center">
+  <img src="icon.png" alt="Keymap Cleaner" width="128" height="128">
+</p>
+
+[![VS Code Version](https://img.shields.io/badge/VS%20Code-%5E1.106.1-blue.svg)](https://code.visualstudio.com)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+
+> Remove unused keybindings in VS Code to keep your configuration clean and optimized.
 
 ## Features
 
-- **Automatically detects unused keybindings**: Scans your keybindings.json file and removes commands that are no longer available
-- **Supports all command sources**: Checks commands from:
+- :shipit: **Automatically detects unused keybindings**: Scans your keybindings.json file and removes commands that are no longer available
+- :trollface: **Supports all command sources**: Checks commands from:
   - VS Code built-in commands
   - Currently activated extensions
   - All installed extensions
-- **Safe operation**: Only removes keybindings for commands that don't exist in your current VS Code environment
-
-- **Easy to use**: Right-click on your keybindings.json file and select "Clean Keybindings"
+- :moyai: **Safe operation**: Only removes keybindings for commands that don't exist in your current VS Code environment
 
 ## How to Use
 
@@ -31,12 +36,14 @@ This extension does not add any VS Code settings. It operates directly on the ke
 
 ## Known Issues
 
-- Only works on Windows (uses %APPDATA% to locate keybindings.json)
+- Only works on Windows (uses `%APPDATA%` to locate keybindings.json)
 - Backup your keybindings.json before cleaning in case you need to restore any custom keybindings
 
 ## For More Information
 
-- Extension homepage: [https://ovfteam.com/](https://ovfteam.com/vsc-ext/keymap-cleaner)
-- Repository: [https://github.com/ovfteam/keymap-cleaner](https://github.com/ovfteam/keymap-cleaner)
+- **Extension homepage**: [https://ovfteam.com/vsc-ext/keymap-cleaner](https://ovfteam.com/vsc-ext/keymap-cleaner)
+- **Repository**: [https://github.com/ovfteam/keymap-cleaner](https://github.com/ovfteam/keymap-cleaner)
+
+---
 
 **Enjoy your clean keybindings!**
