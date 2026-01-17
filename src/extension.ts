@@ -2,6 +2,10 @@ import * as vscode from 'vscode';
 import path from 'node:path';
 import * as fs from 'node:fs';
 
+const KEYBINDINGS_FILE_NAME = 'keybindings.json';
+const APP_FOLDER = 'Code';
+const USER_FOLDER = 'User';
+
 const cleanKeybindings = async (): Promise<void> => {
 	const activeEditor = vscode.window.activeTextEditor;
 	if (!activeEditor) {
@@ -11,9 +15,9 @@ const cleanKeybindings = async (): Promise<void> => {
 	const currentFilePath = activeEditor.document.uri.fsPath;
 	const keybindingsPath = path.join(
 		process.env['APPDATA'] || '',
-		'Code',
-		'User',
-		'keybindings.json',
+		APP_FOLDER,
+		USER_FOLDER,
+		KEYBINDINGS_FILE_NAME,
 	);
 
 	const normalizedCurrentPath = path.resolve(currentFilePath.replaceAll('/', path.sep));
@@ -44,7 +48,7 @@ const cleanKeybindings = async (): Promise<void> => {
 		try {
 			const contributes = extension.packageJSON.contributes;
 			if (!contributes) {
-				return;
+				continue;
 			}
 
 			if (contributes.commands) {
@@ -102,4 +106,3 @@ const activate = (context: vscode.ExtensionContext) => {
 const deactivate = (): void => {};
 
 export { activate, deactivate };
-
